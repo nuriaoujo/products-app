@@ -1,0 +1,52 @@
+<div [ngClass]="isDarkTheme? 'dark-theme' : '!dark-theme'">
+    <mat-toolbar class="barra">
+        <a mat-button routerLink="/product-charts">Inicio</a>
+        <a mat-button routerLink="/products">Productos</a>
+        <a mat-button routerLink="/new-product">Nuevo producto</a>
+  
+        <span class="spacer"></span>
+        <mat-slide-toggle (click)="toggleTheme()"> <mat-icon class="posicion-icono">emoji_objects</mat-icon></mat-slide-toggle>
+    </mat-toolbar>
+  
+      <mat-card class="margenes">
+
+<mat-card class="base">
+    <mat-card-title class="titulo">NUEVO PRODUCTO</mat-card-title>
+    <hr>
+    <mat-card-content>
+        <form (submit)="addProduct()">
+            <mat-form-field appearance="outline" class="caja">
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" name="name" required [(ngModel)]="name">
+                <mat-icon matSuffix class="icono">menu_book</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="caja">
+                <mat-label>Stock</mat-label>
+                <input matInput type="text" name="stock" required [(ngModel)]="stock">
+                <mat-icon matSuffix class="icono">inventory</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="caja">
+                <mat-label>Precio</mat-label>
+                <input matInput type="text" name="price" required [(ngModel)]="price">
+                <mat-icon matSuffix class="icono">euro</mat-icon>
+            </mat-form-field>
+
+            <section class="check-container">
+                <mat-checkbox class="check-boton" name="active" [(ngModel)]="active">Producto activo</mat-checkbox>
+            </section><br>
+            
+            <mat-form-field appearance="outline" class="caja">
+                <mat-label>Fecha</mat-label>
+                <input matInput [matDatepicker]="datepicker" [formControl]="date" class="fecha" [(ngModel)]="date_added">
+                <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                <mat-datepicker #datepicker></mat-datepicker>
+              </mat-form-field>                      
+
+            <div class="boton">
+                <button mat-stroked-button type="submit">GUARDAR</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

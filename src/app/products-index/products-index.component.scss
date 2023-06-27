@@ -1,0 +1,82 @@
+.background {
+    background: rgb(250,227,214);
+    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(157, 184, 206) 100%);
+    height: 100%; /* Ajusta la altura según sea necesario */
+    width: auto; /* Ajusta el ancho según sea necesario */
+}
+.barra{
+    background-color: #7C96AB;
+    color: white;
+}
+.cabecera{
+    position: relative;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+    color: #697f91;
+}
+.boton-unete{
+    text-align: center;
+    margin: 0 auto;
+}
+h1{
+    margin-top: 5%;
+    font-weight: lighter;
+}
+h2{
+    font-weight: 400;
+}
+.caja{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    text-align: center;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.column1 {
+    flex: 1;
+    padding: 16px;
+    margin-right: 5%;
+}
+.title{
+    color: gray;
+    font-weight: lighter;
+    margin-bottom: 5%;
+    margin-left: 45px;
+}
+.column2 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+.column2 img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.inicio-sesion{
+    background-color: #EDC6B1;
+    color: white;
+}
+.icon{
+    background-color: white;
+    color: #EDC6B1;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.rectangulo{
+    font-weight: lighter;
+    color: #7C96AB;
+}
+  

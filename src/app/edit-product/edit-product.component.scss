@@ -1,0 +1,57 @@
+.margenes{
+    margin: 0 auto;
+    padding: 5%;
+    border-radius: 0;
+}
+.barra{
+    background-color: #7C96AB;
+    color: white;
+}
+.base{
+    margin: 0% auto;
+    padding: 0 auto;
+    width: 25%;  
+}
+.titulo{
+    text-align: center;
+    font-weight: lighter;
+    color: #7C96AB;
+    margin-bottom: 7%;
+}
+hr{
+    border: 1px solid #EDC6B1;
+    margin-bottom: 5%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+.boton{
+    text-align: center;
+    color: #7C96AB;
+}
+.caja{
+    color: #7C96AB;
+    font-weight: lighter;
+}
+.radioBoton{
+   margin: 3% 6% 3% 0;
+}
+.icono{
+    color: #BFCCB5;
+}
+.spacer {
+    flex: 1 1 auto;
+}
+
+//checkbox
+.check-boton{
+   color: #7C96AB;
+   font-weight: lighter;
+}
+.fecha{
+    color: #7C96AB;
+    font-weight: lighter;
+}
+  
+  

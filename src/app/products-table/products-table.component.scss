@@ -1,0 +1,48 @@
+.margenes{
+    margin: 0 auto;
+    padding: 0 auto;
+    border-radius: 0;
+}
+table{
+    width: 98%;
+    margin:20px;
+    
+}
+.barra{
+    background-color: #7C96AB;
+    color: white;
+}
+.boton{
+    color: #7C96AB;
+}
+.boton-div{
+    margin-left: 25px;
+}
+th{
+    background-color: #BFCCB5;
+    color: #2B2A4C;
+}
+.botonBolsa{
+    color: #BFCCB5;
+}
+.botonCora{
+    color: #EDC6B1;
+}
+.check{
+    color: #BFCCB5;
+}
+td{
+    color: #7C96AB;
+    font-weight: lighter;
+}
+.nameColumn{
+    font-weight:500;
+}
+h1{
+    color: #7C96AB;
+    font-weight: lighter;
+    text-align: center;
+}
+.spacer {
+    flex: 1 1 auto;
+}

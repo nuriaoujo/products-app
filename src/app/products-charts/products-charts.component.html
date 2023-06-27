@@ -1,0 +1,71 @@
+<div [ngClass]="isDarkTheme? 'dark-theme' : '!dark-theme'">
+    <mat-toolbar class="barra">
+        <a mat-button routerLink="/product-charts">Inicio</a>
+        <a mat-button routerLink="/products">Productos</a>
+        <a mat-button routerLink="/new-product">Nuevo producto</a>
+  
+        <span class="spacer"></span>
+        <mat-slide-toggle (click)="toggleTheme()"> <mat-icon class="posicion-icono">emoji_objects</mat-icon></mat-slide-toggle>
+    </mat-toolbar>
+  
+      <mat-card class="margenes">
+
+        <h1>Bienvenido,</h1>
+        <h2>Estos son tus productos registrados</h2>
+
+        <div class="barra1">
+            <mat-card-content>
+                <ngx-charts-linear-gauge 
+                [view]="[400, 400]"
+                [value]="productsData[0]?.value"
+                [previousValue]="productsData[0]?.previousValue"
+                [min]="0"
+                [max]="50"
+                [units]="productsData[0]?.units"
+                ></ngx-charts-linear-gauge>
+            </mat-card-content>
+
+            <mat-card-content>
+                <ngx-charts-pie-chart
+                    [view]="[400,300]"
+                    [results]="activeData"
+                    [scheme]="colorScheme" 
+                    [legend]="false"
+                    [gradient] ="false"
+                    [labels]="true"
+                    [doughnut]="true">
+                </ngx-charts-pie-chart>
+            </mat-card-content>
+
+        <ngx-charts-bar-vertical
+                [view]="[400,300]"
+                [scheme]="colorScheme"
+                [results]="amountData"
+                [gradient]="gradient"
+                [xAxis]="showXAxis"
+                [yAxis]="showYAxis"
+                [legend]="false"
+                [showXAxisLabel]="showXAxisLabel"
+                [showYAxisLabel]="showYAxisLabel"
+                [xAxisLabel]="xAxisLabel"
+                [yAxisLabel]="yAxisLabel"
+                (select)="onSelect($event)">
+            </ngx-charts-bar-vertical>
+        </div>
+
+        <div class="barra2">
+            <mat-card-content>
+                <ngx-charts-pie-chart
+                    [view]="[400,300]"
+                    [results]="dateData"
+                    [scheme]="colorScheme" 
+                    [legend]="false"
+                    [gradient] ="false"
+                    [labels]="true"
+                    [doughnut]="true">
+                </ngx-charts-pie-chart>
+            </mat-card-content>
+
+        </div>
+    </mat-card>
+</div>

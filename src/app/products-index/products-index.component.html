@@ -1,0 +1,48 @@
+<mat-toolbar class="barra">
+  <a mat-button routerLink="/product-charts">Inicio</a>
+  <a mat-button routerLink="/products">Productos</a>
+  <a mat-button routerLink="/new-product">Nuevo producto</a>
+</mat-toolbar>
+
+<div class="background"></div>
+
+<div class="caja">
+<mat-card class="card">
+    <div class="column1">
+        <mat-card-header>
+            <mat-card-title class="title" style="text-align: center;">INICIA SESIÓN</mat-card-title>
+        </mat-card-header>
+
+        <form (submit)="accessProducts()">
+            <mat-form-field appearance="outline" class="rectangulo">
+              <mat-label>Usuario</mat-label>
+              <input matInput>
+            </mat-form-field>
+          
+            <mat-form-field appearance="outline" class="rectangulo">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon class="icon">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          
+            <mat-card-actions>
+              <button mat-flat-button type="submit" class="inicio-sesion">INICIA SESIÓN</button>
+            </mat-card-actions>
+          </form>
+    </div>
+
+    <div class="column2">
+        <img src="assets/img/CHART.png">
+    </div>
+    </mat-card>
+</div>
+<div class="cabecera">
+  <h1>Registra tus productos</h1>
+  <h2>de manera rápida, sencilla y cómoda</h2>
+  <mat-card-actions class="boton-unete">
+      <button mat-stroked-button>ÚNETE AHORA</button>
+  </mat-card-actions>
+</div>
+

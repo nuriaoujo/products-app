@@ -1,0 +1,29 @@
+.margenes{
+    margin: 0 auto;
+    padding: 0 auto;
+    border-radius: 0;
+}
+.barra{
+    margin: 0 auto;
+    background-color: #7C96AB;
+    color: white;
+}
+h1{
+    color: #7C96AB;
+    font-weight: lighter;
+    margin-left: 5%;
+}
+h2{
+    color: #7C96AB;
+    font-weight: 400;
+    margin-left: 5%;
+}
+.barra1{
+    display: flex;
+}
+.barra2{
+    display: flex;
+}
+.spacer {
+    flex: 1 1 auto;
+}

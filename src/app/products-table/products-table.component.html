@@ -1,0 +1,80 @@
+<div [ngClass]="isDarkTheme? 'dark-theme' : '!dark-theme'">
+  <mat-toolbar class="barra">
+    <a mat-button routerLink="/product-charts">Inicio</a>
+    <a mat-button routerLink="/products">Productos</a>
+    <a mat-button routerLink="/new-product">Nuevo producto</a>
+
+      <span class="spacer"></span>
+      <mat-slide-toggle (click)="toggleTheme()"> <mat-icon class="posicion-icono">emoji_objects</mat-icon></mat-slide-toggle>
+    </mat-toolbar>
+
+    <mat-card class="margenes">
+
+    <h1>TUS PRODUCTOS</h1>
+    
+    <div class="boton-div">
+      <mat-card-actions class="seguirBoton">
+        <button mat-stroked-button class="boton" routerLink="/new-product">NUEVO CONTACTO</button>
+      </mat-card-actions>
+    </div>
+
+    <table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+      
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+        </ng-container>
+      
+        <!-- Nombre Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let product" class="nameColumn"> {{product.name}} </td>
+        </ng-container>
+      
+        <!-- Stock Column -->
+        <ng-container matColumnDef="stock">
+          <th mat-header-cell *matHeaderCellDef> Stock </th>
+          <td mat-cell *matCellDef="let product"> {{product.stock}} </td>
+        </ng-container>
+      
+        <!-- Precio Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+        </ng-container>
+    
+        <!-- Activo Column -->
+        <ng-container matColumnDef="active">
+            <th mat-header-cell *matHeaderCellDef> Activo </th>
+            <td mat-cell *matCellDef="let product">
+                <mat-icon class="check">{{ product.active ? 'check_box' : 'check_box_outline_blank' }}</mat-icon>
+            </td>
+          </ng-container>
+    
+          <!-- Fecha Column -->
+        <ng-container matColumnDef="date_added">
+            <th mat-header-cell *matHeaderCellDef> Fecha </th>
+            <td mat-cell *matCellDef="let product"> {{product.date_added | date}} </td>
+        </ng-container>
+    
+          <!-- Action Column -->
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Acciones </th>
+            <td mat-cell *matCellDef="let product">
+            <button mat-icon-button class="botonBolsa" (click)="viewProductDetail(product)">
+            <mat-icon>shopping_bag</mat-icon>
+          </button>
+          <button mat-icon-button class="botonCora" (click)="openConfirmationDialog(product.id)">
+            <mat-icon>heart_broken</mat-icon>
+          </button>
+        </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="['id', 'name', 'stock', 'price', 'active', 'date_added', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['id', 'name', 'stock', 'price', 'active', 'date_added', 'actions'];"></tr>
+    </table>
+  </mat-card>
+</div>
+  

@@ -1,0 +1,62 @@
+<mat-toolbar class="barra">
+        <a mat-button routerLink="/product-charts">Inicio</a>
+        <a mat-button routerLink="/products">Productos</a>
+        <a mat-button routerLink="/new-product">Nuevo producto</a>
+  
+        <span class="spacer"></span>
+        <mat-slide-toggle (click)="toggleTheme()"> <mat-icon class="posicion-icono">emoji_objects</mat-icon></mat-slide-toggle>
+      </mat-toolbar>
+  
+<div class="dark" [ngClass]="isDarkTheme? 'dark-theme' : '!dark-theme'">
+      <mat-card class="margenes">
+        <mat-card class= "bordeado">
+            <mat-card-header class= "cabecera">
+            <mat-card-title-group>
+                <mat-card-title>{{product.name}}</mat-card-title>
+                <mat-card-subtitle>{{product.price}} €</mat-card-subtitle>
+            </mat-card-title-group>
+            </mat-card-header>
+
+            <img mat-card-image src="https://st2.depositphotos.com/27392032/43081/i/600/depositphotos_430819430-stock-photo-entrepreneur-businessman-small-business.jpg">
+            <hr class="separador">
+
+            <mat-card-content class="ficha">
+                <p class="datosTitulo">DATOS DEL PRODUCTO</p>
+                <div>
+                    <!--Nombre-->
+                    <mat-icon class="iconoProducto">menu_book</mat-icon>
+                    <span class="separadorIcono">{{product.name}}</span>
+                </div>
+
+                <div>
+                    <!--Stock-->
+                    <mat-icon class="iconoProducto">inventory</mat-icon>
+                    <span class="separadorIcono">{{product.stock}} unidades</span>
+                </div>
+
+                <div>
+                    <!--Precio-->
+                    <mat-icon class="iconoProducto">euro</mat-icon>
+                    <span class="separadorIcono">{{product.price}} €</span>
+                </div>
+
+                <div>
+                    <!--Activo-->
+                    <mat-icon class="iconoProducto">check_box</mat-icon>
+                    <span class="separadorIcono">{{product.active ? 'En stock' : 'Sin stock'}}</span>
+                </div>
+
+                <div>
+                    <!--Fecha-->
+                    <mat-icon class="iconoProducto">calendar_month</mat-icon>
+                    <span class="separadorIcono">{{product.date_added | date}}</span>
+                </div>
+
+                <mat-card-actions class="seguirBoton">
+                    <button mat-stroked-button class="actualizar" (click)="goToUpdateContact()">ACTUALIZAR</button>
+                    <button mat-flat-button class="borrar" (click)="deleteContact()">ELIMINAR</button>
+                </mat-card-actions>
+            </mat-card-content>
+        </mat-card>
+    </mat-card>
+</div>
